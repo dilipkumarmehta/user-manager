@@ -1,14 +1,39 @@
 package com.dilip.shoping.beans;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+@Entity
 public class User {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "team_Sequence")
+	@SequenceGenerator(name = "team_Sequence", sequenceName = "TEAM_SEQ")
+	private long id;
+	@Column(name = "username")
 	private String username;
+	@Column(name = "password")
 	private String password;
-	private String passwordConfirm;
+	@Column(name = "email")
 	private String email;
-	private String lastname;
-	private String firstname;
-	private Status status;
+	@Column(name = "lastName")
+	private String lastName;
+	@Column(name = "firstName")
+	private String firstName;
+	@Column(name = "mobileNmber")
+	private long mobileNmber;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getUsername() {
 		return username;
@@ -26,14 +51,6 @@ public class User {
 		this.password = password;
 	}
 
-	public String getPasswordConfirm() {
-		return passwordConfirm;
-	}
-
-	public void setPasswordConfirm(String passwordConfirm) {
-		this.passwordConfirm = passwordConfirm;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -42,28 +59,28 @@ public class User {
 		this.email = email;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public Status getStatus() {
-		return status;
+	public long getMobileNmber() {
+		return mobileNmber;
 	}
 
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setMobileNmber(long mobileNmber) {
+		this.mobileNmber = mobileNmber;
 	}
 
 }

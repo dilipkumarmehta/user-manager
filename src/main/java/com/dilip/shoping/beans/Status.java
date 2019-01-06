@@ -5,6 +5,15 @@ public class Status {
 	private String code;
 	private String message;
 	private boolean error;
+	private String username;
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public String getType() {
 		return type;
