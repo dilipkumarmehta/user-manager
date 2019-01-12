@@ -1,5 +1,6 @@
 package com.dilip.shoping.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,13 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dilip.shoping.beans.Status;
 import com.dilip.shoping.beans.User;
+import com.dilip.shoping.service.UserService;
 
 @RestController
 
 public class UserServiceController {
 
+	@Autowired
+	UserService userService;
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 	public Status login(@RequestBody User user) {
+		userService.logIn(user);
 		return null;
 
 	}

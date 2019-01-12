@@ -1,28 +1,35 @@
-package com.dilip.service;
+package com.dilip.shoping.service;
+
+import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dilip.repository.UserServiceRepository;
 import com.dilip.shoping.beans.Status;
 import com.dilip.shoping.beans.User;
+import com.dilip.shoping.repository.UserServiceRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
-
 	@Autowired
-	private UserServiceRepository playerRepository;
+	DataSource dataSource;
+
+	@Autowired(required = false)
+	private UserServiceRepository userServiceRepository;
 
 	@Override
 	public Status signUp(User user) {
 		// TODO Auto-generated method stub
-		System.out.println(playerRepository);
+		// System.out.println(playerRepository);\
 		return null;
 	}
 
 	@Override
 	public Status logIn(User user) {
-		// TODO Auto-generated method stub
+		System.out.println(userServiceRepository);
+		System.out.println("hello");
+		System.out.println(dataSource);
+
 		return null;
 	}
 

@@ -1,4 +1,4 @@
-package com.dilip.repository;
+package com.dilip.shoping.repository;
 
 import java.util.List;
 
@@ -7,8 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import com.dilip.shoping.beans.User;
 
-@Repository
-public interface UserServiceRepository extends CrudRepository<User, String> {
 
-	List<User> findByTeamId(String username);
+@SuppressWarnings("rawtypes")
+@Repository
+public interface UserServiceRepository extends CrudRepository{
+
+	List<User> findAllUser();
 }
