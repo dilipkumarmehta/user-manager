@@ -1,20 +1,18 @@
 package com.dilip.shoping.beans;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
-public class User implements Serializable {
+@Table(name = "user1")
+public class User {
 
 	@Id
 	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "team_Sequence")
 	//@SequenceGenerator(name = "team_Sequence", sequenceName = "TEAM_SEQ")
+	
 	private long id;
 	@Column(name = "username")
 	private String username;
