@@ -10,7 +10,7 @@ import com.dilip.shoping.beans.User;
 
 @SuppressWarnings("rawtypes")
 @Repository
-public interface UserServiceRepository extends CrudRepository{
+public interface UserServiceRepository extends CrudRepository<User,Long>{
 
-	List<User> findAllUser();
+	
 }

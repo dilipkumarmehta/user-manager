@@ -1,5 +1,7 @@
 package com.dilip.shoping.beans;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,11 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class User {
+public class User implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "team_Sequence")
-	@SequenceGenerator(name = "team_Sequence", sequenceName = "TEAM_SEQ")
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "team_Sequence")
+	//@SequenceGenerator(name = "team_Sequence", sequenceName = "TEAM_SEQ")
 	private long id;
 	@Column(name = "username")
 	private String username;

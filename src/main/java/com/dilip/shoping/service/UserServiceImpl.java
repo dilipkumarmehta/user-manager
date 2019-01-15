@@ -14,22 +14,19 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	DataSource dataSource;
 
-	@Autowired(required = false)
+	@Autowired(required = true)
 	private UserServiceRepository userServiceRepository;
 
 	@Override
 	public Status signUp(User user) {
-		// TODO Auto-generated method stub
-		// System.out.println(playerRepository);\
 		return null;
 	}
 
 	@Override
 	public Status logIn(User user) {
-		System.out.println(userServiceRepository);
-		System.out.println("hello");
-		System.out.println(dataSource);
 
+		userServiceRepository.save(user);
+		System.out.println("persisted");
 		return null;
 	}
 
