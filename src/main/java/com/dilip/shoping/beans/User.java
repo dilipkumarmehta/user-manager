@@ -1,46 +1,40 @@
 package com.dilip.shoping.beans;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user1")
-public class User {
-
-	@Id
-	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "team_Sequence")
-	//@SequenceGenerator(name = "team_Sequence", sequenceName = "TEAM_SEQ")
+@Table(name = "userinfo")
+public class User implements Serializable {
 	
-	private long id;
+	private static final long serialVersionUID = 1L;
 	@Column(name = "username")
-	private String username;
+	private String userName;
 	@Column(name = "password")
 	private String password;
 	@Column(name = "email")
 	private String email;
-	@Column(name = "lastName")
+	@Column(name = "lastname")
 	private String lastName;
-	@Column(name = "firstName")
+	@Column(name = "firstname")
 	private String firstName;
+	@Id
 	@Column(name = "mobileNmber")
 	private long mobileNmber;
 
-	public long getId() {
-		return id;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {

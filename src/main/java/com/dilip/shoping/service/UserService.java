@@ -1,5 +1,6 @@
 package com.dilip.shoping.service;
 
+import com.dilip.shoping.beans.Password;
 import com.dilip.shoping.beans.Status;
 import com.dilip.shoping.beans.User;
 
@@ -9,5 +10,7 @@ public interface UserService {
 	public Status logIn(User user);
 
 	public Status logOut(String userId);
+
+	public Status changepasswor(Password password);
 
 }
