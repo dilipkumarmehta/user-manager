@@ -27,3 +27,5 @@ CREATE SEQUENCE dept_seq START WITH 1;
 insert into registration (id,password,email,first_name,last_name,mobile_nmber) values(dept_seq.nextval,'dilip','dilip@gmail.com','dilip','mehta','89898');
 
 
+Oracle Driver 
+> mvn install:install-file -Dfile=ATT\ojdbc8.jar -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=19.3 -Dpackaging=jar
