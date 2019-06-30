@@ -1,6 +1,5 @@
 package com.dilip.shoping.service;
 
-
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +70,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Status changepasswor(Password password) {
-
+		Status status = new Status();
 		Status validatePassword = validatePassword(password);
 		if (validatePassword != null && validatePassword.getCode().equals("ERROR")) {
 			return validatePassword;
@@ -79,10 +78,13 @@ public class UserServiceImpl implements UserService {
 		Optional<User> findBypassword = userServiceRepository.findBypassword(password.getExistingPassword());
 
 		if (findBypassword.isPresent() && !findBypassword.get().getPassword().equals(password.getNewPassword())) {
+
+			// userServiceRepository.saveAndFlush(entity);
+		 userServiceRepository.changePassword(password.getExistingPassword(),
+					password.getNewPassword());
 			
-			//userServiceRepository.saveAndFlush(entity);
 		}
-		return null;
+		return status;
 	}
 
 	private Status validatePassword(Password password) {
@@ -100,7 +102,7 @@ public class UserServiceImpl implements UserService {
 				return status;
 			}
 		}
-		return status;
+		return null;
 	}
 
 }

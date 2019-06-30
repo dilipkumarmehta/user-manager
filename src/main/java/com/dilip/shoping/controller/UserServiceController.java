@@ -39,10 +39,9 @@ public class UserServiceController {
 
 	}
 
-	@RequestMapping(value ="/changepassword", method= RequestMethod.POST ,produces = "application/json", consumes = "application/json")
-	public Status changePassword(@RequestBody Password user) {
-	
-		return null;
+	@RequestMapping(value = "/changepassword", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	public Status changePassword(@RequestBody Password password) {
+		return userService.changepasswor(password);
 
 	}
 
