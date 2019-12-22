@@ -17,15 +17,12 @@ public class UserServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UserServiceApplication.class, args);
 	}
-	   
+
 	@Bean
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.basePackage("com.dilip.shoping")).paths(PathSelectors.any()).build();
 
 	}
-	
-	
-
 
 }
