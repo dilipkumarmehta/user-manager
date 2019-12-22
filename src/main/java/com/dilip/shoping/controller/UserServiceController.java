@@ -1,5 +1,7 @@
 package com.dilip.shoping.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +20,8 @@ public class UserServiceController {
 
 	@Autowired
 	UserService userService;
-
+	Logger logger= LoggerFactory.getLogger(UserServiceController.class);
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 	public Status login(@RequestBody User user) {
 		Status loginResponsc = userService.logIn(user);
